@@ -136,6 +136,7 @@ pub fn apply_modifiers(json: &mut Value, metadata: &ModelMetadata) -> bool {
 
     for modifier in modifiers {
         if modifier.modify(json, metadata) {
+            info!("🔧 {} applied modifications", modifier.name());
             any_modified = true;
         }
     }

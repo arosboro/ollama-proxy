@@ -3,7 +3,6 @@ use axum::{
     http::{Request, Response, StatusCode},
     body::Body,
 };
-use bytes::Bytes;
 use http_body_util::BodyExt;
 use std::sync::Arc;
 use tracing::{info, warn, error, debug};
