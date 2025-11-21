@@ -84,21 +84,30 @@ Environment variables:
 ## How It Works
 
 1. **Intercept**: Proxy receives request from client
-2. **Analyze**: Extract model name from request body
-3. **Fetch Metadata**: Query Ollama API for model's training parameters
-4. **Modify**: Apply parameter modifiers (cached for performance)
-5. **Forward**: Send corrected request to Ollama
-6. **Return**: Pass response back to client
+2. **Detect API Format**: Determine if request uses OpenAI or native Ollama API
+3. **Translate** (if needed): Convert OpenAI `/v1/embeddings` → Ollama `/api/embed`
+4. **Fetch Metadata**: Query Ollama API for model's training parameters
+5. **Inject Parameters**: Add `options.num_ctx` with correct value for the model
+6. **Forward**: Send request to Ollama native API (which accepts options)
+7. **Translate Response**: Convert Ollama response back to OpenAI format
+8. **Return**: Pass OpenAI-compatible response back to client
 
 ## Architecture
 
 ```
-Client (Elephas) → Proxy (Port 11435) → Ollama (Port 11434)
-                      ↓
-                  Modifiers:
-                  - ContextLimitModifier
-                  - [Future modifiers...]
+Client (Elephas)
+    ↓ OpenAI API format (/v1/embeddings)
+Proxy (Port 11435)
+    ↓ Translates to native Ollama API (/api/embed)
+    ↓ Injects options.num_ctx based on model
+Ollama (Port 11434)
+    ↓ Returns native response
+Proxy
+    ↓ Translates back to OpenAI format
+Client receives OpenAI-compatible response
 ```
+
+**Key Innovation**: The proxy acts as a translation layer, converting between OpenAI's API format (which doesn't support runtime options) and Ollama's native API (which does), enabling per-request parameter control without changing global settings.
 
 ## Extending
 

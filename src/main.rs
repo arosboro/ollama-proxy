@@ -1,6 +1,7 @@
 mod proxy;
 mod model_metadata;
 mod modifier;
+mod translator;
 
 use axum::{Router, serve};
 use std::env;
