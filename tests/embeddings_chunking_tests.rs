@@ -1,5 +1,5 @@
-use ollama_proxy::chunker::chunk_text;
-use ollama_proxy::translator::prepare_embeddings_input;
+use ollama_proxy_rs::chunker::chunk_text;
+use ollama_proxy_rs::translator::prepare_embeddings_input;
 
 #[test]
 fn test_large_input_gets_chunked() {
