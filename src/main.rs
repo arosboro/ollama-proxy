@@ -8,7 +8,6 @@ use axum::{Router, serve};
 use std::env;
 use tokio::net::TcpListener;
 use tracing::{info, Level};
-use tracing_subscriber;
 
 #[tokio::main]
 async fn main() {
