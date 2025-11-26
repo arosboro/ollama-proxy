@@ -1,5 +1,11 @@
 # Ollama Proxy
 
+[![Crates.io](https://img.shields.io/crates/v/ollama-proxy.svg)](https://crates.io/crates/ollama-proxy)
+[![Documentation](https://docs.rs/ollama-proxy/badge.svg)](https://docs.rs/ollama-proxy)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/crates/d/ollama-proxy.svg)](https://crates.io/crates/ollama-proxy)
+[![Rust Version](https://img.shields.io/badge/rust-1.70%2B-blue.svg)](https://www.rust-lang.org)
+
 A lightweight Rust proxy for Ollama that intelligently adjusts request parameters to match each model's training configuration.
 
 ## Problem
