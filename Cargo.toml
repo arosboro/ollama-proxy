@@ -12,6 +12,10 @@ readme = "README.md"
 keywords = ["ollama", "proxy", "ai", "llm", "embeddings"]
 categories = ["network-programming", "api-bindings"]
 
+[[bin]]
+name = "ollama-proxy"
+path = "src/main.rs"
+
 [dependencies]
 tokio = { version = "1.40", features = ["full"] }
 axum = "0.7"
