@@ -1,9 +1,9 @@
-# Ollama Proxy
+# Ollama Proxy (Rust)
 
-[![Crates.io](https://img.shields.io/crates/v/ollama-proxy.svg)](https://crates.io/crates/ollama-proxy)
-[![Documentation](https://docs.rs/ollama-proxy/badge.svg)](https://docs.rs/ollama-proxy)
+[![Crates.io](https://img.shields.io/crates/v/ollama-proxy-rs.svg)](https://crates.io/crates/ollama-proxy-rs)
+[![Documentation](https://docs.rs/ollama-proxy-rs/badge.svg)](https://docs.rs/ollama-proxy-rs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://img.shields.io/crates/d/ollama-proxy.svg)](https://crates.io/crates/ollama-proxy)
+[![Downloads](https://img.shields.io/crates/d/ollama-proxy-rs.svg)](https://crates.io/crates/ollama-proxy-rs)
 [![Rust Version](https://img.shields.io/badge/rust-1.70%2B-blue.svg)](https://www.rust-lang.org)
 [![CI](https://github.com/arosboro/ollama-proxy/workflows/CI/badge.svg)](https://github.com/arosboro/ollama-proxy/actions)
 

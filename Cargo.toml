@@ -1,13 +1,13 @@
 [package]
-name = "ollama-proxy"
+name = "ollama-proxy-rs"
 version = "0.1.1"
 edition = "2021"
-authors = ["Andrew Rosborough <your.email@example.com>"]
+authors = ["Andrew Rosborough <arosborough@oculat.us>"]
 license = "MIT"
 description = "A lightweight Rust proxy for Ollama that intelligently adjusts request parameters to match each model's training configuration"
 repository = "https://github.com/arosboro/ollama-proxy"
 homepage = "https://github.com/arosboro/ollama-proxy"
-documentation = "https://docs.rs/ollama-proxy"
+documentation = "https://docs.rs/ollama-proxy-rs"
 readme = "README.md"
 keywords = ["ollama", "proxy", "ai", "llm", "embeddings"]
 categories = ["network-programming", "api-bindings"]
