@@ -160,7 +160,7 @@ impl ParameterModifier for ContextLimitModifier {
 
         // If num_ctx wasn't present, we should set it explicitly to prevent
         // Ollama from using the global OLLAMA_CONTEXT_LENGTH setting or model defaults
-        if !modified && !json.get("num_ctx").is_some() {
+        if !modified && json.get("num_ctx").is_none() {
             // Check if options object exists
             let has_options_num_ctx = json.get("options")
                 .and_then(|o| o.get("num_ctx"))
@@ -183,7 +183,7 @@ impl ParameterModifier for ContextLimitModifier {
                     );
                     
                     // Ensure options object exists
-                    if !json.get("options").is_some() {
+                    if json.get("options").is_none() {
                         if let Some(obj) = json.as_object_mut() {
                             obj.insert("options".to_string(), Value::Object(Default::default()));
                         }
